@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">    
+<head>   
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Running Status</title>      
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+      
+        body{
+            background-image: url("{{ url_for('static', filename='Vande_Bharat_in_Kashmir_Bridge.avif') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+           
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+
+          }
+
+          .opt{
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            width: 17.5%;
+            margin-left: 2%;
+
+          }
+
+          button {
+          background-color: #04AA6D;
+          color: #ffffff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 17px;
+          font-family: Raleway;
+          cursor: pointer;
+          margin-bottom: 2%;
+
+        }
+
+
+  
+    </style>  
+</head>    
+<body>
+    <form id = "Logout" action="/" enctype="multipart/form-data">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Logout</button>
+            </div>
+          </div>
+    </form>
+    <form id = "Home" action="/selecttrains" enctype="multipart/form-data">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Return to home</button>
+            </div>
+          </div>
+    </form>
+    <form id = "Running status" action="/runningstatus1" method="post" enctype="multipart/form-data">
+        <input class="opt"  type="date" name="Date" id="Date" placeholder="Start of journey" style="margin-top: 4%;"> <br>
+        <input class="opt" type="number" placeholder="Enter a train number" name="running" id="running"> <br>
+        <button class="opt" class="button" type="submit">Check</button>
+    </form>
+    <div>
+        {% for i in status %}
+        <p style="font-size: 24px;color: black; padding-left: 30px;" >Currently crossed {{i[0]}}.</p>
+        <p style="font-size: 24px;color: black; padding-left: 30px;">Arrives {{i[2]}} at {{i[3]}}.</p>
+        {% endfor %}
+    </div>
+    <div>
+        {% for i in status1 %}
+        <p style="font-size: 24px;color: black; padding-left: 30px;">Currently crossed {{i[0]}}.</p>
+        <p style="font-size: 24px;color: black; padding-left: 30px;">Arrives {{i[3]}} at {{i[4]}}.</p>
+        {% endfor %}
+    </div>
+    <div >
+        <p style="font-size: 24px;color: black;font-size: 25px; padding-left: 30px;">{{notrunning}}</p>
+    </div>
+</body>
+</html>

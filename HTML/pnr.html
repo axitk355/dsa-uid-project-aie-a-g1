@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passenger Details</title>
+        <style>
+        input {
+            padding: 10px;
+            width: 17.5%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+
+        }
+
+        button {
+          background-color: #26c520;
+          color: #ffffff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 17px;
+          font-family: Raleway;
+          cursor: pointer;
+          margin-bottom: 2%;
+          
+        }
+
+        body{
+            margin: 1%;
+            background-image: url("{{ url_for('static', filename='namo_bharat.avif') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+        </style>
+    </head>
+<body>
+    <form id = "Logout" action="/" enctype="multipart/form-data">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Logout</button>
+            </div>
+          </div>
+    </form>
+    <form id = "pnr"  action= "/pnr1" method="post" enctype="multipart/form-data">
+
+    <div class=center>
+        <input placeholder="Enter PNR number" name = "PNR" id = "PNR">
+    </div><br>
+    <div class=center>
+    <button href = "/cancel">Submit</button>    
+    </div>    
+    </form>
+
+    <form id = "Home" action="/selecttrains" enctype="multipart/form-data">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Return to home</button>
+            </div>
+          </div>
+    </form>
+    
+    <div class="center">
+    <p style="font-size: 21px;color: black; padding: 10px;">{{msg}}</p>
+</div>
+</body>
+</html>

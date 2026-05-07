@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("{{ url_for('static', filename='VandeBharatSleeper.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            height: 100vh;
+            margin: -20px 0 50PX;
+            overflow: hidden;
+
+        }
+        .button{
+            border-radius: 5px;
+            border: 1px solid #746797;
+            background-color: rgb(135, 219, 135);
+            color: rgb(15, 95, 95);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12PX 105PX;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        
+        #username{
+            border-radius: 5px;
+            border: 1px solid #746797;
+            background-color:white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12PX 50PX;
+            letter-spacing: 1px;
+
+        }
+        #password{
+            border-radius: 5px;
+            border: 1px solid #746797;
+            background-color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12PX 50PX;
+            letter-spacing: 1px;
+
+            transition: transform 80ms ease-in;
+        }
+        #loginform{
+
+        margin-left:  -50%;
+        position: absolute;
+        margin-top:  0%;
+        border: 2px solid whitesmoke;
+        padding: 55px;
+        text-align: center;
+        background-color: black;
+        color: yellow;
+        }
+        h1 {
+            text-align: center;
+            font-size: larger;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginform" action="/login2" method="post" enctype="multipart/form-data">
+    <p><input type="text" id="username" name="username" placeholder="Username"></p>
+    <p>{{validuserid}}</p>
+    <p><input type="password" id="password" name="password" placeholder="Password"></p>
+    <p>{{validpassword}}</p>
+    <button class="button" type="submit">Login</button>
+    </form>  
+</body>
+</html>

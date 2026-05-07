@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passenger Details</title>
+        <style>
+         .opt{
+            padding: 10px;
+
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            width: 17.5%;
+
+          }
+
+          button {
+          background-color: #04AA6D;
+          color: #ffffff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 17px;
+          font-family: Raleway;
+          cursor: pointer;
+          margin-top: 1%;
+          margin-left: 10%;
+
+        }
+
+          body{
+              background-image: url("{{ url_for('static', filename='Vande_Bharat_in_Jammu.png') }}");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              min-height: 100vh;
+              margin-left: 2%;
+              margin-top: 2%;
+              overflow-x: hidden;
+
+              
+          }
+
+          .passdetails{
+            margin:auto;
+            padding: 10px;
+
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            width: 17.5%;
+            margin-left: 15px;
+            margin-bottom: 1%;
+          }
+
+
+
+        </style>
+    </head>
+<body>
+    <form id = "npass"  action= "/book" method="post" enctype="multipart/form-data">
+    <div>Number of seats : 
+        <select  class="passdetails" name="tickets">
+            <option class="opt" selected value={{c}}>{{c}}</option>
+        </select>
+    </div>
+    <input type="hidden" name="people" value="{{c}}">
+    {% for i in range(c) %}
+    <div>Name : 
+        <input  class="passdetails" class="passdetails" name="name{{i+1}}" placeholder="Enter name" style="margin-left: 81px;">
+    </div>
+    <div>Age : 
+        <input  class="passdetails" class="passdetails" name="age{{i+1}}" placeholder="Enter age" style="margin-left: 93px;">
+    </div>
+    <div>Food Service : 
+        {% if k=="Normal" %}
+        <select  class="passdetails" class="passdetails" name="food{{i+1}}" style="margin-left: 35px;" >
+            <option class="opt" selected>Enter food type</option>
+            <option class="opt" value="Veg">Vegetarian</option>
+            <option class="opt" value="NVeg">Non-vegetarian</option>
+            <option class="opt" value="Null">Not required</option>
+        </select>
+        {% elif k=="Special" %}
+        <select  class="passdetails" class="passdetails" name="food{{i+1}}" style="margin-left: 35px;">
+            <option class="opt" selected>Enter food type</option>
+            <option class="opt" value="Veg">Vegetarian</option>
+            <option class="opt" value="NVeg">Non-vegetarian</option>
+        </select>
+        {% endif %}
+    </div>
+    <div>Gender : 
+        <select  class="passdetails" class="passdetails" name="sex{{i+1}}" style="margin-left: 72px;" >
+            <option class="opt" selected>Enter Gender</option>
+            <option class="opt" value="Male">Male</option>
+            <option class="opt" value="Female">Female</option>
+            <option class="opt" value="Transgender">Transgender</option>
+        </select>
+    </div>
+    {% endfor %}
+    <button class="button" type="submit">Submit</button>
+</form>
+</body>
+</html>

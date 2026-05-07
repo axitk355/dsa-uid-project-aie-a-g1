@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  
+  background-image: linear-gradient(-90deg, #d38312,#a83279);
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color:white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-image: linear-gradient(-90deg, #d38312,#a83279);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color:white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.login a{
+    float: right;
+    
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;
+}
+
+
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+body{
+    background-image: url("{{ url_for('static', filename='Chennai_Central.jpg') }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="travelupdates"><i class="fa fa-train" style="font: size 24px;"></i> Travel Updates</a>
+  <div class="dropdown">
+    <button class="dropbtn"><i class="fa fa-fw fa-envelope"></i> Contact Us
+    </button>
+    <div class="dropdown-content">
+      <a onclick="ccn()">Customer Care numbers</a>
+      <a onclick="tcl()">For Ticket cancellation</a>
+      <a onclick="queries()">For Other Queries</a>
+    </div>
+</div> 
+<div class="dropdown">
+
+    <button class="dropbtn"><i>&#9432;</i> About</button>
+    <div class="dropdown-content">
+        <a href="privacypolicy">Privacy Policy</a>
+        <a href="t&c">Terms & Conditions</a>
+    </div> 
+  </div>
+    <div class="login" >
+        <a href="adminlogin"><i class="fa fa-fw fa-user"></i>Admin Login</a>
+        <a href="login"><i class="fa fa-fw fa-user"></i>Login</a>
+        <a href="register1"><i>&reg;</i> Register</a>
+    </div>
+</div>
+
+
+<script>
+    function ccn() {
+      alert(" Customer care numbers - 0763-6612461, 0763-4090840")
+    }
+
+    function tcl(){
+      alert("For ticket cancellation - tc@railexp.co.in")
+    }
+    function queries(){
+      alert("For other queries - queries@railexp.co.in")
+    }
+
+
+</script>
+
+
+
+</body>

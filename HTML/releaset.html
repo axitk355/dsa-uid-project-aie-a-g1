@@ -1,0 +1,88 @@
+<!DOCTYPE html>    
+<html lang="en-US" dir="ltr">     
+<head>   
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Release tatkal tickets</title>  
+    <style>
+        .opt{
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            width: 90.5%;
+            margin-left: 2%;
+            margin-bottom: 1%;
+
+          }
+
+          button {
+          background-color: rgb(47, 103, 209);
+          color: #ffffff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 17px;
+          font-family: Raleway;
+          cursor: pointer;
+
+          margin-left: 2%;
+
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+        body{
+          margin-top: 2%;
+          margin-left: 2%;
+          background-image: url(http://sfwallpaper.com/images/hd-wallpapers-beautiful-scenery-5.jpg);
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+        #Releasettickets{
+          border: 4px solid black;
+          padding: 1%;
+          width: 22.5%;
+        }
+    </style>   
+</head>    
+<body>
+
+      <form id = "Logout" action="/" enctype="multipart/form-data">
+        <div style="float:right;">
+            <button class="button" type="submit">Logout</button>
+        </div>
+      </form>
+      <div class=center>
+      <form id = "Releasettickets" action="/releasettickets" method="post" enctype="multipart/form-data">
+        <select class="opt" name="trainno" id="trainno">
+            <option class="opt" selected>Select train number</option>
+            {% for i in z %}
+                <option class="opt" value={{i[0]}}>{{i[0]}}</option>
+            {% endfor %}
+        </select><br>
+        <input class="opt" type="date" name="Date" id="Date" placeholder="Date"> <br>  
+        <button type="submit" class="button">Release tickets</button>
+      </form>
+      </div>
+
+      <div class=center>
+        <b><p style="color: black; font-size: 24px; padding-right: 60px;">{{k}}</p></b>
+      </div>
+
+      <script>
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("Date")[0].setAttribute('min', today);
+      </script>
+</body>
+</html>

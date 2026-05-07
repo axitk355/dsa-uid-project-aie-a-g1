@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ticket</title>
+        <style>
+            .ticket{
+                border: 2px solid black;
+                padding: 1.5%;
+                width: fit-content;
+                margin-left: 2%;
+                font-family: Raleway;
+                background-color: white;
+            }
+
+            body{
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+                background-image: url("{{ url_for('static', filename='amrit_bharat.avif') }}");
+                overflow: hidden;
+                
+            }
+
+            button {
+             background-color:black;
+
+             border: none;
+             padding: 10px 20px;
+             font-size: 17px;
+             color:aliceblue;
+             font-family: Raleway;
+             cursor: pointer;
+             margin-bottom: 2%;
+             margin-top: 5%;
+        }            
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+    <form id = "Logout" action="/" method="GET">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Logout</button>
+            </div>
+          </div>
+    </form>
+    <div class="ticket" style="margin-left: 36%;">
+        <div style="border: 2px solid black; width: 50%; margin: auto; height: 5%; background-color: rgb(155, 148, 148);">
+
+            <h1 style="text-align: center;height: 15px;">Ticket</h1>
+            <br>
+        </div>
+        <br>
+        PNR = {{PNR}} <br><br>
+        Trainno = {{Trainno}} <br>
+        Boardingstation = {{b}} ,
+        Arrival Station = {{a}} <br><br>
+        Date = {{Date}} <br>
+        No of seats = {{nseats}}
+        <br>
+    </div>
+    <div class=center>
+    <form id = "cancel"  action= "/cancel" enctype="multipart/form-data">
+        <button class = "button" type = "submit">Cancel Ticket</button>
+    </form>
+    </div>
+
+    <form id = "Home" action="/selecttrains" enctype="multipart/form-data">
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button class="button" type="submit">Return to home</button>
+            </div>
+          </div>
+    </form>
+
+</body>
+</html>

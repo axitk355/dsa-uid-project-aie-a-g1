@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration page</title> 
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            background-color: #f1f1f1;
+          }
+          
+          #regForm {
+            background-color: #ffffff;
+            margin: 100px auto;
+            font-family: Raleway;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+            height: auto;
+          }
+          
+          h1 {
+            text-align: center;  
+          }
+          
+          input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+          }
+          
+          input.invalid {
+            background-color: #ffdddd;
+          }
+          
+
+          
+          button {
+            background-color: #04AA6D;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            opacity: 0.8;
+          }
+          
+          #prevBtn {
+            background-color: #bbbbbb;
+          }
+          
+          .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+          }
+          
+          .step.active {
+            opacity: 1;
+          }
+          
+          .step.finish {
+            background-color: #04AA6D;
+          }
+          .drop_btn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          .drop_btn:hover, .drop_btn:focus {
+            background-color: #2980B9;
+          }
+          
+          .drop_down {
+            position: relative;
+            display: inline-block;
+          }
+          
+          .dropdown_content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown_content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          
+          .drop_down a:hover {background-color: #ddd;}
+          
+          .show {display: block;}
+          
+          .drop_down:hover .dropdown_content {display: block;}
+          
+          .drop_down:hover .drop_btn {background-color: #3e8e41;}
+          
+          #address{
+            width: 900px;
+            padding: 20px;
+            background-color: white;
+            -webkit-box-align: center;
+            margin: auto;
+          }
+          
+          .sizy{
+            width: 852px;
+            text-align: center;
+          }
+          
+          input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+          }
+          
+          .opt{
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+          }
+          
+          
+          
+          </style>
+
+    </head>
+    <body>
+    
+    <form id="regForm" action="/register2" method="post" enctype="multipart/form-data">
+      <h1>Registration</h1>
+      <div >Basic Details:
+        <p><input placeholder="Username" oninput="this.className = ''" name="username"></p>
+        <p>{{validuserid}}</p>
+        <p><input type="password" placeholder="Password" name="password"></p>
+        <p><input type="password" placeholder=" Confirm Password" name=" confirmpassword"></p>
+        <select class="opt" name="securityquestion" id="securityquestion">
+          <option class="opt" selected>Choose a security question</option> 
+          <option class="opt" value="What is your pet name?">What is your pet name?</option>
+          <option class="opt" value="What was the name of your first school?">What was the name of your first school?</option>
+          <option class="opt" value="What is your all time favorite sports team?">What is your all time favorite sports team?</option>
+          <option class="opt" value="When did you first meet your spouse?">When did you first meet your spouse?</option>
+        </select>
+      </div>
+        <p><input placeholder="Security Answer" name="securityanswer"></p>
+      </div>
+    
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="submit" class="button">Next</button>
+        </div>
+      </div>
+    </form>
+    
+    </body>
+    </html>

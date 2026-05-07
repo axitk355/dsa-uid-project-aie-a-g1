@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">    
+<head>   
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Running Status</title>    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      body {
+  background-image:url(https://www.orientrailjourneys.com/blog/wp-content/uploads/2019/10/rovos-rail-1.jpg) 
+}
+.vertical-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border: 3px solid rgb(0, 0, 0); 
+}
+    </style>
+</head>    
+<body>
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+              <div class="card-body p-4 p-sm-5">
+        <div class="form-floating mb-3">
+            <div class="center">    
+        <form id = "releaseg" action= "/releaseg" enctype="multipart/form-data">
+            <div class="form-group">
+            <button class="button" type="submit">Release general tickets</button> 
+            </div>     
+        </form>
+        </div>
+        </div>
+        <div class="form-floating mb-3">
+            <div class="center">
+        <form id = "releaset" action= "/releaset" enctype="multipart/form-data">
+            <div class="form-group">
+            <button class="button" type="submit" >Release tatkal tickets</button>    
+        </div>  
+        </form>
+        </div>
+        </div>
+        <form id = "Logout" action="/" enctype="multipart/form-data">
+            <div class="vertical-center">
+                    <button class="button" type="submit">Logout</button>
+              </div>
+        </form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

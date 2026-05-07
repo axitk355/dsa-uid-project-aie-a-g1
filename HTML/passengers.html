@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passenger Details</title>
+        <style>
+            .opt{
+               padding: 5px;
+               width: 100%;
+               font-size: 17px;
+               font-family: Raleway;
+               border: 1px solid #aaaaaa;
+             }
+   
+             button {
+             background-color: rgb(26, 152, 190);
+             color: #ffffff;
+             border: none;
+             padding: 10px 20px;
+             font-size: 17px;
+             font-family: Raleway;
+             cursor: pointer;
+             margin-bottom: 2%;
+   
+           }
+   
+             body{
+               background-image: url("{{ url_for('static', filename='aero_wag7.jpg') }}");
+               background-repeat: no-repeat;
+               background-size: cover;
+               background-position: center;
+               min-height: 100vh;
+               color: white;
+               font-size: 24px;
+               overflow-y: hidden;
+               margin-left: 2%;
+               margin-top: 1.4%;
+           }
+           
+           .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+   
+           </style>
+    </head>
+    <body>
+      <div class="center">
+        <form id = "npass"  action= "/npass1" method="post">
+            <label for="tickets">Select number of Ticket(s):</label><br><br>
+            <select class="opt" name="tickets" id="tickets">
+                <option class="opt" value="1">1</option>
+                <option class="opt" value="2">2</option>
+                <option class="opt" value="3">3</option>
+                <option class="opt" value="4">4</option>
+            </select><br><br>
+            <button class="button" type="submit">Submit</button> 
+          </form>
+        </div>
+    </body>
+</html>
